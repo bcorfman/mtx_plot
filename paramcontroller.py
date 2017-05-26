@@ -49,6 +49,7 @@ class ParamController:
 
     # noinspection PyUnusedLocal
     def on_case_item_clicked(self, item):
+        self.dlg.lblErrorReport.setText('')
         self.dlg.btnMakePlot.setEnabled(True)
 
     def on_btn_choose_input_dir(self):
@@ -79,6 +80,7 @@ class ParamController:
     # noinspection PyUnusedLocal
     def on_btn_make_plot(self):
         QApplication.setOverrideCursor(Qt.WaitCursor)
+        self.dlg.lblErrorReport.setText('')
         for i in self.dlg.lstCase.selectedItems():
             if self.dlg.rdoWorksheets.isEnabled():
                 try:
